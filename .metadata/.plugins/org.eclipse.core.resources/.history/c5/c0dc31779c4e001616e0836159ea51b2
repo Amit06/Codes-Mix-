@@ -1,0 +1,20 @@
+for tc in range(input()):
+    a=raw_input().strip()
+    b=raw_input().strip()
+    d={}
+    
+    for f in a:
+        if f in d.keys():
+            d[f]+=1
+        else:
+            d[f]=1
+    
+    for g in b:
+        if g in d.keys():
+            d[g]=0
+    ans=''
+    for f in a:
+        if d[f]!=0:
+            d[f]-=1
+            ans+=f 
+    print ans

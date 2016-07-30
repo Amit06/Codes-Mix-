@@ -1,0 +1,27 @@
+a,b=raw_input().split('e')
+d=a.split('.')
+if int(b)<len(d[1]):
+    ans=d[0]+d[1][:int(b)]+'.'+d[1][int(b):] if d[0]!='0' else d[1][:int(b)]+'.'+d[1][int(b):]
+    print ans
+elif int(b)==len(d[1]):
+    ans=d[0]+d[1]
+    print ans[:-1]
+else:
+    ans=float(a)*(10**int(b))
+    c=str(ans).split('+')
+    flag=False
+    r=0
+    if len(c)>1:
+        r=int(c[1])-len(d[1])
+        flag=True
+    if flag==False: 
+        x=str(ans).split('.')
+        if x[1]=='0':
+            print int(x[0])
+        else:
+            print ans
+    else:
+        l=c[0].split('e')[0]
+        lt=l.split('.')
+        l=lt[0]+lt[1]
+        print l+'0'*r

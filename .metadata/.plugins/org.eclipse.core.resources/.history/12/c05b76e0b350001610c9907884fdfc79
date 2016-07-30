@@ -1,0 +1,2 @@
+n=input()
+str=[i for i in raw_input().split()]

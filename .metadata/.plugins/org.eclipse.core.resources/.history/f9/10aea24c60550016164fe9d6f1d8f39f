@@ -1,0 +1,7 @@
+for _ in range(input()):
+    n=input()
+    a=map(int,raw_input().split())
+    ps=[]
+    for it in a:
+        ps.append(it)
+    for i in range(n)

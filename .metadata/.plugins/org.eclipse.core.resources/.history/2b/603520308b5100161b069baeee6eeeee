@@ -1,0 +1,9 @@
+class letter:
+    choices=[i for i in 'abcdefghijklmnopqrstuvwxyz']
+    def __init__(self,val):
+        self.val=self.choices.index(val)
+    def next(self):
+
+start=raw_input()
+finish=raw_input()
+sa=[i for i in raw_input().split()]

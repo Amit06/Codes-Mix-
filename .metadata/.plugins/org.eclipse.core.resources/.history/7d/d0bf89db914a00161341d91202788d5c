@@ -1,0 +1,33 @@
+class N:
+    
+    def __init__(self,w,l):
+        self.w=w
+        self.l=l
+    def __ge__(self,a,b):
+        if (a.w-a.l)!=(b.w-b.l):
+            a.w-a.l>b.w-b.l
+        else:
+            a.w>a.l 
+            
+        
+        
+
+f=open('Jobs.txt','r')
+n=[]
+for line in f:
+    t,u=map(int,line.split())
+    no=N(t,u)
+    n.append(no)
+n=[N(3,5),N(1,3)]
+s=sorted(n,reverse=True)
+
+ti=0
+sum=0
+while s:
+    j=s.pop(0)
+    print j.w,j.l
+    sum+=(ti+j.l)*j.w
+    ti+=j.l
+print sum
+    
+    

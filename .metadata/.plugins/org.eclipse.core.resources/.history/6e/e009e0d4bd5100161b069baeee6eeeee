@@ -1,0 +1,23 @@
+def S(x):
+    d=[i for i in str(x)]
+    sd=sum(map(int,d))
+    return sd
+
+n=input()
+l=len(str(n))
+e=(10**n-1)
+ed=e-n
+s=n-ed
+count=0
+if n<300:
+    for i in range(n):
+        if i+S(i)+S(S(i))==n:
+           
+            count+=1
+else:
+    for i in range(n-(300),n):
+        if i+S(i)+S(S(i))==n:
+            
+            count+=1
+print count
+    

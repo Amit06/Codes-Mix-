@@ -1,0 +1,16 @@
+def partition(a):
+    print a
+    small=0;
+    
+    for j in range(1,len(a)):
+        if a[j]<a[0]:
+            small+=1
+            a[small],a[j]=a[j],a[small]
+    a[0],a[small]=a[small],a[0]
+    print a
+    return small+1
+for i in range(input()):    
+    n,k=map(int, raw_input().split())
+    a=map(int, raw_input().split())
+    pos=partition(a)
+    print pos

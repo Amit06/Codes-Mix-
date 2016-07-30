@@ -1,0 +1,33 @@
+for tc in range(input()):
+    f,b,t,fd,bd=map(int,raw_input().split())
+    if f==b and f<fd:
+        print "No Ditch"
+    elif f==b and f>=fd:
+        print "%d F" %(fd*t)
+    elif f!=b and f>=fd:
+        print "%d F" %(fd*t)
+    elif f!=b and f<fd :
+        if f>b:
+            m='F'
+            
+        else:
+            m='B'
+            fd,bd=bd,fd
+        ti=0
+        p=0
+        
+        while(True):
+            
+            ti+=f
+            
+            print ti
+            if ti>=fd:
+                p+=(fd-ti)*t
+                break
+            else:
+                p+=fd*t
+            ti-=b
+            print ti
+            p+=bd*t
+            print p
+        print "%d %s" %(p,m)

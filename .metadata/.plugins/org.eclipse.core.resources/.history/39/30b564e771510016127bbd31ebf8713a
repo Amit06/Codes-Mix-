@@ -1,0 +1,14 @@
+for i in range(input()):
+    n=input()
+    a=map(int,raw_input().split())
+    d={}
+    for e in a:
+        if e not in d:
+            d[e]=0
+        d[e]+=1
+    print d
+    su=0
+    for e in d:
+        su=su+e if d[e]==1 else su+0
+    print su
+        

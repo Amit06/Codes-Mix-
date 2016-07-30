@@ -1,0 +1,22 @@
+for tc in range(input()):
+    n,m=map(int,raw_input().split())
+    a=map(int,raw_input().split())
+    b=map(int,raw_input().split())
+    d={}
+    
+    for f in a:
+        if f in d.keys():
+            d[f]+=1
+        else:
+            d[f]=1
+    flag=False
+    ans=[]
+    for g in b:
+        if g in d.keys() and d[g]!=0:
+            d[g]-=1
+            ans.append(g)
+            flag=True
+    if not flag:
+        print "Zero"
+    else:
+        print ""

@@ -1,0 +1,32 @@
+n,m=map(int,raw_input().split())
+x=[0 for _ in range(n)]
+y=[0 for _ in range(n)]
+z=[]
+count=n**2
+i=0
+for col in range(m):
+    p,q=map(int, raw_input().split())
+    #print p,q
+    if x[p-1]==0 and y[q-1]==0:
+        count-=2*n-1
+        count+=i
+        i+=2
+        x[p-1]+=1
+        y[q-1]+=1
+    elif x[q-1]>0:
+        #print "Here",i,n
+        count-=2*n-1
+        #print "c",count
+        count+=(n-1)-x[p-1]
+        #print "c",count
+        #print "c",count
+        x[q-1]+=1
+        i+=1
+    elif y[p-1]==False:
+        count-=2*n-1
+        count+=i//2
+        count+=n-1
+        x[p-1]=False
+        i+=1
+    #print x,y,i
+    print count

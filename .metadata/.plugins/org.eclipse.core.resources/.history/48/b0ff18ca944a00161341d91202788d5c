@@ -1,0 +1,23 @@
+class N:
+    def __init__(self,a,b):
+        self.w=a
+        self.l=b
+    def __gt__(self,a):
+        if self.w-self.l!=a.w-a.l:
+            return self.w-self.l>a.w-a.l
+        else:
+            return self.w>a.w
+        
+f=open("Jobs.txt",'r')
+n=int(f.readline())
+arr=[]
+for line in f:
+    w,l=map(int,raw_input().split())
+    arr.append(N(w,l))
+s=sorted(arr,reverse=True)
+ti=0
+sum=0
+for i in s:
+    sum+=(ti+s[1])*s[0]
+    ti+=s[1]
+print sum

@@ -1,0 +1,13 @@
+n=input()
+s=[i for i in raw_input()]
+print s
+p=list(set(s))
+print p
+col=[]
+d={}
+for a in s:
+    d[a]=[i for i in range(n) if s[i]==a]
+
+for k in d:
+    col.append(k) if k not in col 
+print col

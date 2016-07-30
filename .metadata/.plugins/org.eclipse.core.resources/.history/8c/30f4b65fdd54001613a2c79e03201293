@@ -1,0 +1,11 @@
+for i in range(input()):
+    l,r,k=map(int,raw_input().split())
+    su=0
+    
+   
+    for i in range(l,r+1):
+        si=i >> k-1
+        print bin(i),bin(si)
+        if bin(si)[2:][-1]==1:
+            su+=i
+    print su

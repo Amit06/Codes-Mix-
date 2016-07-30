@@ -1,0 +1,22 @@
+def S(x):
+    d=[i for i in str(x)]
+    sd=sum(map(int,d))
+    return sd
+
+n=input()
+l=len(str(n))
+e=(10**n-1)
+ed=e-n
+s=n-ed
+count=0
+if n<50:
+    for i in range(50):
+        if i+S(i)+S(S(i))==n:
+            print i
+            break
+else:
+    for i in range(s,n):
+        if i+S(i)+S(S(i))==n:
+            print i
+            break
+    

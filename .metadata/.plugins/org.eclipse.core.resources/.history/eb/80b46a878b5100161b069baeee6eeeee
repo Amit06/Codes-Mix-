@@ -1,0 +1,12 @@
+class letter:
+    choices=[i for i in 'abcdefghijklmnopqrstuvwxyz']
+    def __init__(self,val):
+        self.val=self.choices.index(val)
+    def next(self):
+        self.val=self.choices[self.val+1] if self.val<26 else self.choices[0]
+    def next(self):
+        self.val=self.choices[self.val+1] if self.val<26 else self.choices[0]
+
+start=raw_input()
+finish=raw_input()
+sa=[i for i in raw_input().split()]

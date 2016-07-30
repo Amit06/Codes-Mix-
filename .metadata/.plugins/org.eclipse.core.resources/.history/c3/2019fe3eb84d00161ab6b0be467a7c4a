@@ -1,0 +1,17 @@
+r,c=map(int,raw_input().split())
+p=[]
+for i in range(r):
+    p.append([i for i in raw_input()])
+x=[]
+for i in range(r):
+    for j in range(c):
+        if p[i][j]=='*':
+            x.append([i,j])    
+
+col=filter(lambda j:j[1]==x[0][1],x)
+row=filter(lambda j:j[0]==x[0][0],x)
+if not row or not col:
+    print "YES"
+    print x[0]
+else:
+    print x,row,col,"NO"

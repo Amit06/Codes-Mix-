@@ -1,0 +1,99 @@
+class BST:
+    
+    def __init__(self,root=None):
+        self.root=root
+        
+    class Node:
+        
+        def __init__(self,k,v,p):
+            self.key=k
+            self.val=v
+            self.l=None
+            self.r=None
+            self.p=p
+    
+    def search(self,key,t=False):
+        if t==False:
+            t=self.root
+        if t is None or t.key==key:
+            return t
+        if key<t.key:
+            return self.search(key,t.l)
+        else:
+            return self.search(key,t.r)
+    def insert(self,key,value,t=False,p=None):
+        
+        flag=False
+        if t==False:
+            if self.root==None:
+                self.root=BST.Node(key,value,None)
+                flag=True
+                
+            t=self.root
+            
+        if not flag:
+            if t is None:
+                t=BST.Node(key,value,p)
+                
+            else:
+                
+                if key<t.key:   
+                    t.l=self.insert(key,value,t.l,t)
+                else:
+                    t.r = self.insert( key, value,t.r, t)
+               
+        return t
+    
+    def replace(self,a,b):
+        if a.p==None:
+            self.root=b
+        elif a.p.l==a:
+            a.p.l=b
+        else:
+            a.p.r=b
+        if b!=None:
+            b.p=a.p
+    def remove(self,key,t=False):
+        if t==False:
+            t=self.root
+        if t==None:
+            return
+        elif t.key<key:
+            self.remove(key,t.r)
+        elif t.key>key:
+            self.remove(key,t.l)
+        elif t.l!=None and t.l!=None:
+            m=t.r
+            while(m.l!=None):
+                m=m.l
+            t.key=m.key
+            t.value=m.value
+            self.replace(m,m.r)
+        elif t.l!=None:
+            self.replace(t,t.l)
+        elif t.r!=None:
+            self.replace(t, t.r)
+        else:
+            self.replace(t,None)
+        
+    def printTree(self,node=False):
+        if node==False:
+            node=self.root
+        if node!=None:
+            
+            self.printTree(node.l)
+            print
+            print node.key,":",node.val,
+            self.printTree(node.r)
+            print 
+
+A=BST()
+A.insert(2, 1)
+print "::::::::::"
+A.printTree()
+A.insert(5, 5)
+print ".............."
+A.printTree()
+A.insert(3,2)
+print ".............."
+A.printTree()

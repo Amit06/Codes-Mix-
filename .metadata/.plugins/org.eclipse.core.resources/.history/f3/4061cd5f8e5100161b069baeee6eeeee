@@ -1,0 +1,23 @@
+class letter:
+    choices=[i for i in 'abcdefghijklmnopqrstuvwxyz']
+    def __init__(self,val):
+        self.val=val
+    def next(self):
+        self.val=self.choices[self.choices.index(self.val)+1] if self.val<25 else self.choices[0]
+        
+    def prev(self):
+        self.val=self.choices[self.choices.index(self.val)-1] if self.val<0 else self.choices[25]
+
+A=letter('a')
+B=letter('z')
+
+print A.val
+#print B.val
+A.next()
+print A.val
+#A.prev()
+#print A.val
+#B.prev()
+#print B.val
+#B.next()
+#print B.val

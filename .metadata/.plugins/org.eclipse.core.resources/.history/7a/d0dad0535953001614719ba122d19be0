@@ -1,0 +1,25 @@
+'''
+   author:ph0enix
+'''
+for i in range(input()):
+    n=input()
+    a=map(int,raw_input().split())
+    mid=len(a)//2
+    
+    for i in range(10):
+        print mid,a[mid]
+        if a[mid]==mid+1:
+            print "#1"
+            if a[mid+1]-a[mid]==2:
+                print a[mid]+1
+                break
+            else:
+                mid+=(len(a)-mid)//2
+        elif a[mid]==mid+2:
+            print "#2"
+            if a[mid]-a[mid-1]==2:
+                print a[mid]-1
+                break
+            else:
+                mid-=mid//2
+        

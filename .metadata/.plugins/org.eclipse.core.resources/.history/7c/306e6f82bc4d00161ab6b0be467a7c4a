@@ -1,0 +1,16 @@
+r,c=map(int,raw_input().split())
+p=[]
+for i in range(r):
+    p.append([i for i in raw_input()])
+x=[]
+for i in range(r):
+    for j in range(c):
+        if p[i][j]=='*':
+            x.append([i,j])    
+        
+for i in x:
+    br=filter(lambda r:r[0]!=i[0],x)
+    bc=filter(lambda r:r[1]!=i[1],x)
+    print i
+    print br
+    print bc

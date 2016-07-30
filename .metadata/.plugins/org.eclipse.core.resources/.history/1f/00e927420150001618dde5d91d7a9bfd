@@ -1,0 +1,54 @@
+import java.util.*;
+class TCS
+{
+	public static void main(String args[])
+	{
+		Scanner in=new Scanner(System.in);
+		int f,b,t,fd,bd;
+		f=in.nextInt();
+		b=in.nextInt();
+		t=in.nextInt();
+		fd=in.nextInt();
+		bd=in.nextInt();
+		if (f==b && f<fd)
+			System.out.println("No Ditch");
+		else if (f==b && f>=fd)
+	        System.out.println(fd*t+" F");
+	    else if (f!=b && f>=fd)
+	    	System.out.println(fd*t+" F");
+	    else if (f!=b && f<fd)
+	    {
+	    	if (f>b)
+	    		char m='F';
+	    	
+	    }
+			
+		
+	}
+}
+
+    
+    
+        
+        if f>b:
+            m='F'
+        else:
+            flag=True
+            m='B'
+            fd,bd=bd,fd
+            f,b=b,f
+        ti=0
+        p=0
+        if flag:
+            ti-=b
+            p+=b*t
+        while(True):
+            ti+=f
+            if ti>=fd:
+                p+=(f-(ti-fd))*t
+                break
+            else:
+                p+=f*t    
+            ti-=b
+            p+=b*t
+            print "%d %s" %(p,m)

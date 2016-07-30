@@ -1,0 +1,19 @@
+
+public class SNode {
+	private int data;
+	private SNode next;
+	
+	SNode()
+	{
+		data=0;
+		next=null;
+	}
+	SNode(int x)
+	{
+		data=x;
+	}
+	void setData(int x)
+	{
+		data=x;
+	}
+}

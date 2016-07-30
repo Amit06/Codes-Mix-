@@ -1,0 +1,25 @@
+/*
+ *  @author Amit
+ */
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+
+class A
+{
+	public static void main(String[] args)
+	{
+		InputReader in = new InputReader(System.in);
+		OutputWriter out = new OutputWriter(System.out);
+		
+		out.flush();
+	}
+}
+

@@ -1,0 +1,9 @@
+x,t,s=map(int,raw_input().split())
+if t<=x:
+    for i in range(t,x+1,s):
+        if x==i or x==i+1:
+            print 'YES'
+        else:
+            print 'NO'
+else:
+    print "NO"

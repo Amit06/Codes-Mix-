@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class LStack {
+	SNode top;
+	
+	LStack()
+	{
+		top=null;
+	}
+	LStack(SNode x)
+	{
+		top=x;
+	}
+	void push(int x)
+	{
+		SNode n=new SNode(x);
+		n.setNext(top);
+		top=n;
+	}
+	void peek()
+	{
+		System.out.println(top.getData());
+	}
+	int pop()
+	{
+		if(top==null)
+		{
+			throw new NoSuchElementException("Underflow");
+		}
+		int temp=top.getData();
+		top=top.getNext();
+	}
+
+}

@@ -1,0 +1,5 @@
+f=open('Jobs.txt','r')
+n=[]
+for line in f:
+    n.append(map(int,line.split()))
+print n

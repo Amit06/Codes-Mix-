@@ -1,0 +1,6 @@
+r,c=map(int,raw_input().split())
+p=[]
+for i in range(r):
+    p.append(map(int,raw_input().split()))
+    
+x=[(i,j) for i in range(r) for j in range(c) if p[i][j]=='*']

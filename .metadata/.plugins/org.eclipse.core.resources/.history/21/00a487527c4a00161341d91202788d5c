@@ -1,0 +1,30 @@
+'''
+Created on Jul 15, 2016
+
+@author: Amit
+'''
+def nod(a):
+    an=[]
+    an.append((a[0],float('inf'),None))
+    an.append((a[1],float('inf'),None))
+    an.append(a[2])
+    return an
+    
+def main():
+    f=open('Prims.txt','r')
+    a=[]
+    for l in f:
+        a.append(map(int,l.split()))
+    
+    N,M=a[0][0],a[0][1]
+    a=a[1:]
+    a=map(nod,a)
+    print a
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,8 @@
+n=[3,0,98,67,77,8,4,2,21,2,33,874]
+count=0
+for i in range(len(n)):
+	for j in range(i,len(n)):
+		if n[i]>n[j]:
+			print n[i],n[j]
+			count+=1
+print count

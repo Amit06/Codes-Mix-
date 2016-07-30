@@ -1,0 +1,7 @@
+for tc in range(input()):
+    n,k=map(int,raw_input().split())
+    a=map(int,raw_input().split())
+    a[k-1],a[-k]=a[-k],a[k-1]
+    for i in range(len(a))
+        print i,
+    print ''

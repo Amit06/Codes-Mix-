@@ -1,0 +1,32 @@
+n=input()
+r,c=map(int,raw_input().split())
+m=map(int,raw_input().split())
+print m
+mat=[]
+for i in range(0,r+c,c):
+    print "i--",i,m[i:i+c]
+    mat.append(m[i:i+c])
+    
+for t in mat:
+    for y in t:
+        print y,
+    print
+    
+''''x=[0 for _ in range(r)]
+y=[0 for _ in range(c)]
+
+for i in range(r):
+    for j in range(c):
+        if m[i][j]==1:
+            x[i]=1
+            y[j]=1
+
+for i in range(r):
+    for j in range(c):
+        if x[i]==1 or y[j]==1:
+            m[i][j]=1
+
+for t in m:
+    for y in t:
+        print y,
+    print'''

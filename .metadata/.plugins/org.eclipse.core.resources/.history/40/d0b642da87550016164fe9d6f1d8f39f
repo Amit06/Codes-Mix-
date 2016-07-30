@@ -1,0 +1,84 @@
+/*
+ *  @author Amit
+ */
+
+import java.io.*;
+import java.util.*;
+		public class A  {
+			static int count=0;
+
+			public static void main (String[] args) throws FileNotFoundException {
+				
+				String file="D:\\input.txt";
+				Scanner in = new Scanner(new FileReader(file));
+				int[][] entry=new int[5][5];
+				int i=0;
+				
+				while(in.hasNextLine())
+				{
+					String temp=in.nextLine();
+					System.out.print("Temp is "+temp);
+					int d=5-temp.length();
+					for (int add=0;add<d;add++)
+						temp=temp+" ";
+					for (int col=0;col<5;col++)
+					{	int en; 
+						if (temp.charAt(col)=='#')
+							en=1;
+						else
+							en=0;
+						entry[i][col]=en;
+					}
+					i++;
+				}
+				
+				
+				A obj = new A();
+				int[][] matrix = entry;
+				System.out.println("Islands: " + obj.countIslands(matrix));
+			}
+			int masses=0;
+			int countIslands(int[][] matrix) {
+				int n=matrix.length;
+				for(int i=0;i<n;i++){
+					for(int j=0;j<n;j++){
+						if(true==isConnected(i,j,n,matrix))
+							count++;
+						else:
+							masses+=1;
+					}
+				}
+				return count;
+			}
+			boolean isConnected(int i,int j,int n,int[][]matrix){
+				if(!isValidIndex(i, j, n)){
+					return false;
+				}
+				if(matrix[i][j]==1){
+					matrix[i][j]=0;
+					
+					isConnected(i-1, j-1, n,matrix);
+					isConnected(i, j-1, n,matrix);
+					isConnected(i+1, j-1, n,matrix);
+					isConnected(i+1, j, n,matrix);
+					isConnected(i+1, j+1, n,matrix);
+					isConnected(i, j+1, n,matrix);
+					isConnected(i-1, j+1, n,matrix);
+					isConnected(i-1, j, n,matrix);
+					return true;
+				}
+				
+				return false;
+			}
+
+			boolean isValidIndex(int i, int j, int n) {
+				if (i >= n || i < 0 || j >= n || j < 0)
+					return false;
+				return true;
+			}
+
+		
+
+	}
+
+

@@ -1,0 +1,10 @@
+for i in range(input()):
+    a,b,c,d=map(int,raw_input().split())
+    if a*b==c*d:
+        print "Possible"
+    elif a*c=b*d:
+        print "Possible"
+    elif a*d=b*c:
+        print "Possible"
+    else:
+        print "Imossible"

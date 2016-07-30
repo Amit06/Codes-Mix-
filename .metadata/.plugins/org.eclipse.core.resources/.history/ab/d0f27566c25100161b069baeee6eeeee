@@ -1,0 +1,19 @@
+n,q=map(int,raw_input().split())
+a=map(int,raw_input().split())
+qu=[]
+c={}
+for p,i in enumerate(a):
+    if i not in c:
+        c[i]=[p]
+    c[i].append()
+     
+for i in range(qu):
+    qu.append(map(int,raw_input().split()))
+
+for q in qu :
+    if q[0]==1:
+        a[q[1]-1]=q[2]
+        c[a[q[2]]].append(q[1]-1)
+        del c[a[q[1]-1]]].index(q[1]-1)
+    else:
+        q[1],q[2]=q[1]-1,q[2]-1

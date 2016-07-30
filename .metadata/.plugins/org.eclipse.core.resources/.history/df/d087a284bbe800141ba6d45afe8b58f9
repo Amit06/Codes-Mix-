@@ -1,0 +1,29 @@
+
+public class EvaluateExpression {
+	private String s;
+	private int n;
+	EvaluateExpression(String x)
+	{
+		s=x;
+		n=0;
+	}
+	private  preceedence getNextToken()
+	{
+		if(n==s.length())
+			return preceedence.eos;
+		char symbol=s.charAt(n++);
+		switch(symbol)
+		{
+		case '(':return preceedence.lparen;
+		case ')':return preceedence.rparen;
+		case '+':return preceedence.plus;
+		case '-':return preceedence.minus;
+		case '/':return preceedence.divide;
+		case '*':return preceedence.times;
+		case '%':return preceedence.mod;
+		default :return preceedence.operand;
+		}
+		
+	}
+
+}

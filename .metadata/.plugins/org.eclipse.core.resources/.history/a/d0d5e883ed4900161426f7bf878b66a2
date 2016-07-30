@@ -1,0 +1,18 @@
+a,b=raw_input().split('e')
+d=a.split('.')
+print d
+ans=float(a)*(10**int(b))
+c=str(ans).split('+')
+flag=False
+r=0
+if len(c)>1:
+    r=int(c[1])-len(d[1])
+    flag=True
+if flag==False: 
+    x=str(ans).split('.')
+    if x[1]=='0':
+        print int(x[0])
+    else:
+        print ans
+else:
+    print c[0].split('e')[0]+'0'*r

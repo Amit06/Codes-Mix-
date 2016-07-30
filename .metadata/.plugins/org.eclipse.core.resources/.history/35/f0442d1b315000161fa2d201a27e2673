@@ -1,0 +1,10 @@
+n,m=raw_input().split()
+x=[True for _ in range(n)]
+y=[True for _ in range(n)]
+z=[]
+for i in range(m):
+    p,q=map(int, raw_input().split())
+    x[p]=False
+    y[q]=False
+    z=[[u,v] for u in range(n) for v in range(m) if x[u]==True and y[v]==True]
+print z

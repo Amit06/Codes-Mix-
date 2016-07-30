@@ -1,0 +1,61 @@
+
+public class EvaluateExpression {
+	private String s;
+	char symbol;
+	private int n;
+	Stack q;
+	EvaluateExpression(String x)
+	{
+		s=x;
+		n=0;
+		q=new Stack();
+	}
+	private  preceedence getNextToken()
+	{
+		if(n==s.length())
+			return preceedence.eos;
+		 symbol=s.charAt(n++);
+		switch(symbol)
+		{
+		case '(':return preceedence.lparen;
+		case ')':return preceedence.rparen;
+		case '+':return preceedence.plus;
+		case '-':return preceedence.minus;
+		case '/':return preceedence.divide;
+		case '*':return preceedence.times;
+		case '%':return preceedence.mod;
+		case ' ' : 
+		case '\n': 
+		case '\t':return preceedence.eos;
+		default :return preceedence.operand;
+		}
+		
+	}
+	void evaluate()
+	{
+		preceedence token =getNextToken();
+		token=getNextToken();
+		while(token!=preceedence.eos)
+		{
+			if(token == preceedence.operand)
+				q.push(symbol-'0');
+			else{
+			int op2=q.pop();
+			int op1=q.pop();
+			switch(token)
+			{
+			case plus: q.push(op1+op2);break;
+			case minus: q.push(op1-op2);break;
+			case times: q.push(op1*op2);break;
+			case divide:q.push(op1/op2);break;
+			case mod:q.push(op1%op2);break;
+			
+			}
+			token=getNextToken();
+		}
+			
+		
+	}
+
+	}
+}

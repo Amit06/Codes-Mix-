@@ -1,0 +1,28 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Stack s=new Stack();
+		try{
+			s.pop();
+				
+			}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		s.push(2);
+		s.push(6);
+		s.push(6);
+		s.display();	
+		try{
+			System.out.println(s.pop());
+				
+			}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		s.display();
+	}
+}

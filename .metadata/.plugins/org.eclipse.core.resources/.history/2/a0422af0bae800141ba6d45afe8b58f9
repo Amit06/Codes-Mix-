@@ -1,0 +1,15 @@
+
+public class EvaluateExpression {
+	private String s;
+	private int n;
+	EvaluateExpression(String x)
+	{
+		s=x;
+		n=0;
+	}
+	private char getNextToken()
+	{
+		char symbol=s.charAt(n);
+	}
+
+}

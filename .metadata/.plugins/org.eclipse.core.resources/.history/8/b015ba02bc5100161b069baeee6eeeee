@@ -1,0 +1,6 @@
+n=input()
+l=len(str(n))
+e=(10**n-1)
+ed=e-n
+s=n-ed
+for i in range(s,n):

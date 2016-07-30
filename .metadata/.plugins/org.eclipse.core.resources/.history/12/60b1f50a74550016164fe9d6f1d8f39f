@@ -1,0 +1,18 @@
+for _ in range(input()):
+    n=input()
+    a=map(int,raw_input().split())
+    if sum(a)%2==0:
+        print len(a)
+    else:
+        pos=-1
+        for p,i in enumerate(a):
+            if i%2==1:
+                pos=p
+                break
+        pos2=n
+        for pi in range(n-1,-1,-1):
+            if a[pi]%2==1:
+                pos2=pi
+                break
+        print pos
+        print max(len(a[pos+1:]),len(a[:pos]))

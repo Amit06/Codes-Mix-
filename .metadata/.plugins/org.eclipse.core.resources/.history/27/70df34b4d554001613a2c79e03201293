@@ -1,0 +1,6 @@
+class anokhi():
+    def __init__(self,sc,ti,sub,nam):
+        self.sc=sc
+        self.ti=ti
+        self.sub=sub
+        self.nam=nam

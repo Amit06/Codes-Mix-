@@ -1,0 +1,19 @@
+
+def radix(a):
+    RADIX=10
+    for p,i in enumerate(a):
+        a[p]='0'*(5-len(str(i)))+str(i)
+    
+    bucket=[list() for i in range(RADIX)]
+    
+    for i in range(4,-1,-1):
+        for j in a:
+            print int(j[i])%RADIX,i
+            bucket[int(j[i])%RADIX].append(i)
+    print bucket
+            
+            
+        
+    
+radix([1,2,3,4,55,6])
+            

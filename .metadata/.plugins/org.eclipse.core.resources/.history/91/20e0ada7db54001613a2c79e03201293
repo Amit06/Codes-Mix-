@@ -1,0 +1,35 @@
+class Anokhi():
+    def __init__(self,sc,ti,sub,nam):
+        self.sc=sc
+        self.ti=ti
+        self.sub=sub
+        self.nam=nam
+    def __cmp__(self,x):
+        if self.sc<x.sc:
+            return -1
+        elif self.sc>x.sc:
+            return 1
+        elif self.sc==x.sc and self.ti<x.ti:
+            return -1
+        elif self.sc==x.sc and self.ti>x.ti:
+            return 1
+        elif self.sc==x.sc and self.ti==x.ti and self.sub<x.sub:
+            return -1
+        elif self.sc==x.sc and self.ti==x.ti and self.sub>x.sub:
+            return 1
+        elif self.sc==x.sc and self.ti==x.ti and self.sub==x.sub and self.nam<x.nam:
+            return -1 
+        elif self.sc==x.sc and self.ti==x.ti and self.sub==x.sub and self.nam>x.nam:
+            return 1
+        
+for _ in range(input()):
+    n=input()
+    ab=[]
+    for i in range(n):
+        a=raw_input().split()
+        temp=Anokhi(int(a[0]),int(a[1]),int(a[2]),a[3])
+        ab.append(temp)
+    ab=sorted(ab)
+    for k in ab:
+        print k.sc,k.ti,k.sub,k.nam
+    

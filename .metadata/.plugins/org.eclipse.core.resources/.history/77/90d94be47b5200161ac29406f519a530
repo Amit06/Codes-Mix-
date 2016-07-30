@@ -1,0 +1,14 @@
+class BST:
+    
+    def __init__(self,root):
+        self.root=root
+        
+    class Node:
+        
+        def __init__(self,k,v,l,r,p):
+            self.key=k
+            self.val=v
+            self.key=l
+            self.key=r
+            self.key=p
+            

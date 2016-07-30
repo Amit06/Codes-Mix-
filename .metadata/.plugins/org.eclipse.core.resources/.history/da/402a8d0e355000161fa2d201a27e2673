@@ -1,0 +1,27 @@
+n,m=map(int,raw_input().split())
+x=[True for _ in range(n)]
+y=[True for _ in range(n)]
+z=[]
+count=n**2
+i=0
+for i in range(m):
+    p,q=map(int, raw_input().split())
+    if x[p]==True and y[q]==True:
+        count-=2*n-1
+        count+=i
+        i+=2
+        x[p-1]=False
+        y[q-1]=False
+    elif x[p-1]==False:
+        count-=2*n-1
+        count+=i//2
+        count+=n-1
+        y[q]=False
+        i+=1
+    elif y[q-1]==False:
+        count-=2*n-1
+        count+=i//2
+        count+=n-1
+        x[p]=False
+        i+=1
+    print count

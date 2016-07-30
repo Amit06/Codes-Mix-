@@ -1,0 +1,13 @@
+a,b=raw_input().split('e')
+d=a.split('.')
+print d
+ans=float(a)*(10**int(b))
+c=str(ans).split('+')
+if len(c)>1:
+    r=int(c[1])-len(d[1])
+    print r 
+x=str(ans).split('.')
+if x[1]=='0':
+    print int(x[0])
+else:
+    print "%.100f" % ans

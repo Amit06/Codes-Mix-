@@ -1,0 +1,74 @@
+class BST:
+    
+    def __init__(self,root):
+        self.root=root
+        
+    class Node:
+        
+        def __init__(self,k,v,p):
+            self.key=k
+            self.val=v
+            self.l=None
+            self.r=None
+            self.p=p
+    
+    def search(self,t=False,key):
+        if t==False:
+            t=self.root
+        if t is None or t.key==key:
+            return t
+        if key<t.key:
+            return self.search(t.l,key)
+        else:
+            return self.search(t.r,key)
+    def insert(self,t=False,p=None,key,value):
+        if t==False:
+            t=self.root
+        if t is None:
+            t=self.Node(key,value,p)
+        else:
+            if key<t.key:
+                t.l=self.insert(t.l,t,key,value)
+            else:
+                t.r = self.insert(t.r, t, key, value)
+        return t
+    
+    def replace(self,a,b):
+        if a.p==None:
+            self.root=b
+        elif a.p.l==a:
+            a.p.l=b
+        else:
+            a.p.r=b
+        if b!=None:
+            b.p=a.p
+    def remove(self,t=False,key):
+        if t==False:
+            t=self.root
+        if t==None:
+            return
+        elif t.key<key:
+            self.remove(t.r,key)
+        elif t.key>key:
+            self.remove(t.l,key)
+        elif t.l!=None and t.l!=None:
+            m=t.r
+            while(m.l!=None):
+                m=m.l
+            t.key=m.key
+            t.value=m.value
+            self.replace(m,m.r)
+        elif t.l!=None:
+            self.replace(t,t.l)
+        elif t.r!=None:
+            self.replace(t, t.r)
+        else:
+            self.replace(t,None)
+        
+    def printTree(self,node=False):
+        if node==False:
+            node=self.root
+        self.printTree(node.l)
+        print t.key,";",
+            
+            

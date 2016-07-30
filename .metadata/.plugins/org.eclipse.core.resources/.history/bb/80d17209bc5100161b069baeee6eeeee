@@ -1,0 +1,11 @@
+def S(x):
+    d=[i for i in str(x)]
+    sd=sum(map(int,d))
+    return sd
+n=input()
+l=len(str(n))
+e=(10**n-1)
+ed=e-n
+s=n-ed
+if n<10:
+for i in range(s,n):

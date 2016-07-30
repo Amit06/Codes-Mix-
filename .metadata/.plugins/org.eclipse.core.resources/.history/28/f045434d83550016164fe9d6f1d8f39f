@@ -1,0 +1,90 @@
+/*
+ *  @author Amit
+ */
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+
+class A
+{
+	public static void main(String[] args)
+	{
+		BufferedReader br = new BufferedReader(new FileReader(""));
+		try {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    String everything = sb.toString();
+		} finally {
+		    br.close();
+		}
+		import java.io.*;
+		public class A {
+			static int count=0;
+
+			public static void main(String[] args) {
+				CountIslands obj = new CountIslands();
+				int[][] matrix = {  { 1, 1, 0, 0, 0 },
+									{ 0, 1, 0, 0, 1 },
+									{ 1, 0, 0, 1, 1 },
+									{ 0, 0, 0, 0, 0 },
+									{ 1, 0, 1, 0, 1 } };
+				System.out.println("Islands: " + obj.countIslands(matrix));
+			}
+
+			int countIslands(int[][] matrix) {
+				int n=matrix.length;
+				for(int i=0;i<n;i++){
+					for(int j=0;j<n;j++){
+						if(true==isConnected(i,j,n,matrix))
+							count++;
+					}
+				}
+				return count;
+			}
+			boolean isConnected(int i,int j,int n,int[][]matrix){
+				if(!isValidIndex(i, j, n)){
+					return false;
+				}
+				if(matrix[i][j]==1){
+					matrix[i][j]=0;
+					
+					isConnected(i-1, j-1, n,matrix);
+					isConnected(i, j-1, n,matrix);
+					isConnected(i+1, j-1, n,matrix);
+					isConnected(i+1, j, n,matrix);
+					isConnected(i+1, j+1, n,matrix);
+					isConnected(i, j+1, n,matrix);
+					isConnected(i-1, j+1, n,matrix);
+					isConnected(i-1, j, n,matrix);
+					return true;
+				}
+				
+				return false;
+			}
+
+			boolean isValidIndex(int i, int j, int n) {
+				if (i >= n || i < 0 || j >= n || j < 0)
+					return false;
+				return true;
+			}
+
+		}
+
+	}
+}
+

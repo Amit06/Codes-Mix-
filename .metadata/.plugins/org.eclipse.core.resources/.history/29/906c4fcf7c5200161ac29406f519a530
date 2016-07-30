@@ -1,0 +1,21 @@
+class BST:
+    
+    def __init__(self,root):
+        self.root=root
+        
+    class Node:
+        
+        def __init__(self,k,v,p):
+            self.key=k
+            self.val=v
+            self.l=None
+            self.r=None
+            self.p=p
+    
+    def search(self,t,key):
+        if t==None or t.key==key:
+            return t
+        if key<t.key:
+            return search(l.l,key):
+        
+            

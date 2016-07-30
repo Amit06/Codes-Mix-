@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CVF/src/Main&apos; to &apos;Main.java&apos;" description="Rename resource &apos;Main&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Main" name="Main.java" stamp="1469800428884" updateReferences="true"/>
+</session>

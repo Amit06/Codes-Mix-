@@ -1,0 +1,39 @@
+
+def countInv(a):
+    if len(a)>1:
+        
+        q=len(a)//2
+        L=a[:q]
+        R=a[q:]
+        
+        x=countInv(L)
+        y=countInv(R)
+        z=countSplitInv(L,R)
+        return x+y+z
+    else:
+        return 0
+        
+def countSplitInv(L,R):
+    
+    i=0
+    j=0
+    count=0
+    while i<len(L) and j<len(R):
+        if L[i]<R[j]:
+            i+=1
+        else:
+            j+=1
+            count+=len(L)-(i)   
+    return count
+
+n=open("D:\Integer.txt",'r');
+
+a=[]
+for line in n:
+    a.append(int(line))
+
+
+print countInv(a)
+
+
+        

@@ -1,0 +1,21 @@
+def partition(a,l,r):
+    print a
+    small=l;
+    
+    for j in range(l+1,r):
+        if a[j]<a[l]:
+            small+=1
+            a[small],a[j]=a[j],a[small]
+    a[l],a[small]=a[small],a[l]
+    print a
+    return small
+for i in range(input()):    
+    n,k=map(int, raw_input().split())
+    a=map(int, raw_input().split())
+    pos=partition(a,0,len(a))
+    while(pos!=k):
+        if pos>k:
+            pos=partition(a,0,pos)
+        else:
+            pos=partition(a,pos+1,len(a))
+    print a[k+1:]

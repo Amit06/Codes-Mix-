@@ -1,0 +1,7 @@
+a,b=raw_input().split('e')
+ans=float(a)*(10**int(b))
+x=str(ans).split('.')
+if x[1]=='0':
+    print int(x[0])
+else:
+    print ans

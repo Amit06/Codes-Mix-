@@ -1,0 +1,13 @@
+n=input()
+d=raw_input()
+p=map(int,raw_input().split())
+mini=float('inf')
+for i in range(len(p)):
+    j=i+1
+    while p[i]-p[j] < mini and j<len(p) :
+        if d[i]!=d[i+1]:
+            mini=p[i]-p[j]
+            break
+        j+=1
+print min 
+    

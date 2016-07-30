@@ -1,0 +1,13 @@
+r,c=map(int,raw_input().split())
+p=[]
+for i in range(r):
+    p.append(raw_input().split())
+for k in p:
+    print k
+''''x=[]
+for i in range(r):
+    for j in range(c):
+        if p[i][j]=='*':
+            x.append([i,j])    
+
+print x'''

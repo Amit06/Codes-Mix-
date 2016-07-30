@@ -1,0 +1,8 @@
+for k in range(input()):
+    l,r,k=map(int,raw_input().split())
+    su=0
+    mask=1<<k-1
+    for i in range(l,r+1):
+        if mask & i !=0 :
+            su+=i
+    print su

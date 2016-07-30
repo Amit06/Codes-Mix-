@@ -1,0 +1,12 @@
+n=input()
+c=map(int,raw_input().split())
+sumi=sum(c)/2
+c=[[i,False] for i in c]
+for p,i in enumerate(c):
+    for j in range(p+1,n) :
+        if p+c[j]==sumi:
+            c[]
+            
+
+            
+        

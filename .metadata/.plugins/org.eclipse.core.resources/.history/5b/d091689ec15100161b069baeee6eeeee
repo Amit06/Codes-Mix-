@@ -1,0 +1,15 @@
+n,q=map(int,raw_input().split())
+a=map(int,raw_input().split())
+qu=[]
+c={}
+for i in a:
+    if i not in c:
+        c 
+for i in range(qu):
+    qu.append(map(int,raw_input().split()))
+
+for q in qu :
+    if q[0]==1:
+        a[q[1]]=q[2]
+    else:
+        

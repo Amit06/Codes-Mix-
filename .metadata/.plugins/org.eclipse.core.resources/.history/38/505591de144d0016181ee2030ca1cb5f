@@ -1,0 +1,4 @@
+dp=[]
+n=input()
+dp.append(i+1 for i in range(n+1))
+print dp[0]

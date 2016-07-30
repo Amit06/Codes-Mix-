@@ -1,0 +1,31 @@
+try:
+    while True:
+        st=raw_input().strip()
+        d={}
+        flag=True
+        for i in st:
+            if i in '0123456789':
+                print "Invalid"
+                flag=False
+                break
+                
+                
+            if i in d:
+                print "Invalid"
+                flag=False
+                break
+            else:
+                print i
+                d[i]=1
+                
+        for k in d.keys():
+            if d[k]!=1:
+                flag=False
+                
+        
+        if flag:
+            print "Valid"
+        break
+                
+except:
+    pass

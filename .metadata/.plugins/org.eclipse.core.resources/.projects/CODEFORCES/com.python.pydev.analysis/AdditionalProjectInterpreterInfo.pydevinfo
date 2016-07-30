@@ -1,0 +1,21 @@
+-- VERSION_4
+-- START DISKCACHE_2
+D:\eclipseWorkspace\.metadata\.plugins\org.eclipse.core.resources\.projects\CODEFORCES\com.python.pydev.analysis\v2_indexcache
+362B|1468525810620074000|D:\eclipseWorkspace\CODEFORCES\362B.py
+362A|1468516380295966000|D:\eclipseWorkspace\CODEFORCES\362A.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=362B
+2=362A
+-- END DICTIONARY
+-- START TREE 1
+4
+ans|1|ans!11@
+c|1|c!11@
+d|1|d!11@
+fla|1|flag!19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

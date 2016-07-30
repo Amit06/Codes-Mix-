@@ -1,0 +1,10 @@
+
+public class Tset {
+
+	public static void main(String[] args) {
+
+		MaxHeap m=new MaxHeap(10);
+		
+	}
+
+}

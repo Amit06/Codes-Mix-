@@ -1,0 +1,54 @@
+class BST:
+    
+    def __init__(self,root):
+        self.root=root
+        
+    class Node:
+        
+        def __init__(self,k,v,p):
+            self.key=k
+            self.val=v
+            self.l=None
+            self.r=None
+            self.p=p
+    
+    def search(self,t=False,key):
+        if t==False:
+            t=self.root
+        if t is None or t.key==key:
+            return t
+        if key<t.key:
+            return self.search(t.l,key)
+        else:
+            return self.search(t.r,key)
+    def insert(self,t=False,p=None,key,value):
+        if t==False:
+            t=self.root
+        if t is None:
+            t=self.Node(key,value,p)
+        else:
+            if key<t.key:
+                t.l=self.insert(t.l,t,key,value)
+            else:
+                t.r = self.insert(t.r, t, key, value)
+        return t
+    
+    def replace(self,a,b):
+        if a.p==None:
+            self.root=b
+        elif a.p.l==a:
+            a.p.l=b
+        else:
+            a.p.r=b
+        if b!=None:
+            b.p=a.p
+    def remove(self,t=False,key):
+        if t==False:
+            t=self.root
+        if t==None:
+            return
+        if t.key<key:
+            self.remove(t.r,key)
+        if t.key>key:
+            self.remove(t.l,key)
+            

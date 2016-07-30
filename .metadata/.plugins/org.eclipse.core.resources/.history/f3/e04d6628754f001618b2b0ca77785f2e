@@ -1,0 +1,54 @@
+'''
+   author:ph0enix
+'''
+for i in range(input()):
+    s=raw_input().strip()
+    if len(s)==2:
+        if s[0]==s[1] :
+            print "1"
+        else:
+            print "0"
+    else:
+        pr=[]
+        for i in range(len(s)-1):
+            if s[i]==s[i+1]:
+                pr.append(i)
+        
+        s=[i for i in s]
+        ex=[p for p,i in enumerate(s) if s.count(i)%2==1 and (p==len(s)-1 or s[p]!=s[p+1]) and (p==0 or s[p]!=s[p-1])]
+        nf=1
+        print set(s)
+        if len(ex)==1:
+            #print "here"
+            pr=ex
+            nf=0
+        if s.count((s[pr[0]])%2==1) or pr==[] :
+            print '0'
+            
+        else:
+            #print pr
+            for p in enumerate(pr):
+                
+                q=p+1 if nf==1 else p 
+                p=p-1 if p>0 else len(s)-1
+                q=q+1 if q<len(s)-1 else 0
+                flag=True
+                
+                while(p!=q):
+                    
+                    if  p-1==q:
+                        break      
+                    if s[p]!=s[q]:
+                        flag=False
+                        break
+                    p=p-1 if p>0 else len(s)-1
+                    q=q+1 if q<len(s)-1 else 0
+                if nf==0 and p==q and p!= pr[0]:
+                    flag=False
+                    break
+                if flag:
+                    break
+            if not flag:
+                print "0"
+            else:
+                print 1

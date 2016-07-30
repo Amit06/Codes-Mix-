@@ -1,0 +1,17 @@
+n=input()
+s=[i for i in raw_input()]
+d={}
+for k in s:
+    d[k]=0
+tot=len(d)
+start=0
+d[s[0]]+=1
+now=1
+j=1
+while True:
+    while now<tot:
+        if j>=n:
+            break
+        if d[s[j]]==0:
+            now+=1  
+        

@@ -1,0 +1,43 @@
+from _collections import deque
+
+def bfs(start):
+    d=deque(start[0])
+    while d:
+        u=d.popleft()
+        uadj=
+        for ua in uadj:
+            d.append(ua)
+        
+        
+    
+    
+class letter:
+    choices=[i for i in 'abcdefghijklmnopqrstuvwxyz']
+    def __init__(self,val):
+        self.val=val
+    def next(self):
+        self.val=self.choices[self.choices.index(self.val)+1] if self.choices.index(self.val)<25 else self.choices[0]
+        
+    def prev(self):
+        self.val=self.choices[self.choices.index(self.val)-1] if self.choices.index(self.val)>0 else self.choices[25]
+    def pnext(self):
+        return self.choices[self.choices.index(self.val)+1] if self.choices.index(self.val)<25 else self.choices[0]
+        
+    def pprev(self):
+        return self.choices[self.choices.index(self.val)-1] if self.choices.index(self.val)>0 else self.choices[25]
+
+start=raw_input()
+end=raw_input()
+forbid=[i for i in raw_input().split()]
+
+class game:
+    def __init__(self,nodes):
+        self.nodes=[letter(i) for i in nodes]
+        self.ua=[]
+    def solve(self):
+        bfs(self.nodes)
+    def uadj(self):
+        for k in nodes:
+            self.ua.append(k.pnext(),k.pprev)
+
+    

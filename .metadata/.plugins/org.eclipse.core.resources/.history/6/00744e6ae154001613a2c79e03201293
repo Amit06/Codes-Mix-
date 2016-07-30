@@ -1,0 +1,32 @@
+def cmpa(x,y):
+    if x[0]==y[0]:
+        if x[1]==y[1]:
+            if x[2]==y[2]:
+                if x[3]<=y[3]:
+                    return True
+                else:
+                    return False
+            elif x[2]<y[2]:
+                return True
+            else:
+                return False
+        elif x[1]<y[1]:
+            return True
+        else:
+            return False
+    elif x[0]<y[0]:
+        return True
+    else:
+        return False
+            
+for tc in range(int(raw_input())):
+    n=int(raw_input())
+    ab=[]
+    for i in range(n):
+        a=raw_input().split()
+        ab.append(a)
+    ab=sorted(ab,cmp=cmpa)
+    for j in amba:
+        for k in amba:
+            print k,
+        print 

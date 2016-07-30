@@ -1,0 +1,8 @@
+
+def radix(a):
+    for p,i in enumerate(a):
+        a[p]='0'*(5-len(str(i)))+str(i)
+    print a
+    
+radix([1,2,3,4,55,6])
+            

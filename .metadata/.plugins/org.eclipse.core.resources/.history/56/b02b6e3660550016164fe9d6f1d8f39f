@@ -1,0 +1,5 @@
+for _ in range(input()):
+    n=input()
+    a=map(int,raw_input().split())
+    ps=[]
+    for i in range()

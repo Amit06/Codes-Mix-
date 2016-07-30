@@ -1,0 +1,27 @@
+#MAXISUM
+test = input()
+while test > 0:
+    test -= 1
+    n,k = map(int, raw_input().split())
+    A = map(int, raw_input().split())
+    B = map(int, raw_input().split())
+    
+    negin = B.index(min(B))
+    posin = B.index(max(B))
+    ind = 0
+    if(abs(B[negin]) > abs(B[posin])):
+        ind = negin
+    else:
+        ind = posin
+        
+    if(B[ind] < 0):
+        A[ind] -= k
+    else:
+        A[ind] += k
+    
+    ssum = 0
+    i = 0
+    while i < n:
+        ssum += A[i] * B[i]
+        i += 1
+    print ssum 

@@ -1,0 +1,13 @@
+def cmp(x,y):
+    
+for tc in range(int(raw_input())):
+    n=int(raw_input())
+    ab=[]
+    for i in range(n):
+        a=raw_input().split()
+        temp=Anokhi(a)
+        ab.append(temp)
+    ab=sorted(ab)
+    for k in ab:
+        print k.sc,k.ti,k.sub,k.nam
+    

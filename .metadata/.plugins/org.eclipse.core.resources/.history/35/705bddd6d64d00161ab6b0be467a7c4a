@@ -1,0 +1,21 @@
+r,c=map(int,raw_input().split())
+p=[]
+for i in range(r):
+    p.append([i for i in raw_input()])
+x=[]
+for i in range(r):
+    for j in range(c):
+        if p[i][j]=='*':
+            x.append([i,j])    
+flag=False       
+for i in x:
+    br=filter(lambda r:(r[0]==i[0] or r[1]==i[1]),x)
+    #bc=filter(lambda r:r[1]==i[1],x)
+    if br==x:
+        flag=True
+        print "YES"
+        print i[0]+1,i[1]+1
+        break
+    #print bc
+if not flag:
+    print "NO"

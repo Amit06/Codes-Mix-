@@ -1,0 +1,19 @@
+for tc in range(input()):
+    n,m=map(int,raw_input().split())
+    a=raw_input().strip()
+    b=raw_input().strip()
+    d={}
+    
+    for f in a:
+        if f in d.keys():
+            d[f]+=1
+        else:
+            d[f]=1
+    flag=False
+    for g in b:
+        if g in d.keys() and d[g]!=0:
+            d[g]-=1
+            print g,
+            flag=True
+    if not flag:
+        print "Zero"

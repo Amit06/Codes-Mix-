@@ -1,0 +1,18 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Stack s=new Stack();
+		try{
+			s.pop();
+			s.push(2);
+			s.push(6);
+			s.push(6);
+			s.display();		
+			}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+}

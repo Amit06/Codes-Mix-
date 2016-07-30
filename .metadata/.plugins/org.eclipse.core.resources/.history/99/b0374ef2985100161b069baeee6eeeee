@@ -1,0 +1,8 @@
+from _collections import deque
+
+start=raw_input()
+end=raw_input()
+forbid=[i for i in raw_input().split()]
+
+graph={}
+for p,i in enumerate('abcdefghijklmnopqrstuvwxyz'):

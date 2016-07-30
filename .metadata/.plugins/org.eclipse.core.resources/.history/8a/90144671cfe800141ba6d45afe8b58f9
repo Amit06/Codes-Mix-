@@ -1,0 +1,26 @@
+
+public class SparseMatrix {
+	Term a[];
+	SparseMatrix()
+	{
+		a=new Term[1];
+		a[0].row=0;
+		a[0].col=0;
+		a[0].value=0;
+		
+	}
+	SparseMatrix(int b[][])
+	{
+		int t=1;
+		a=new Term[b.length*b[0].length];
+		for(int i=0;i<b.length;i++)
+			for(int j=0;j<b[0].length;j++)
+			{
+				if(b[i][j]!=0){
+					a[t].row=i;
+					a[t].col=j;
+					a[t].value=b[i][j];}
+					
+			}
+	}
+}

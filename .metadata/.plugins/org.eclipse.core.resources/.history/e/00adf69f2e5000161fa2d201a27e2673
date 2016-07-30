@@ -1,0 +1,27 @@
+n=input()
+c=map(int,raw_input().split())
+sumi=sum(c)/(n/2)
+print sumi
+c=[[i,False] for i in c]
+print c
+d={}
+for i in range(n):
+    print i
+    if c[i][1]==True:
+        print i,'here'
+       
+        continue
+    for j in range(i+1,n) :
+        print j
+        if c[j][0]==True:
+            continue
+        if c[i][0]+c[j][0]==sumi and c[j][1]==False:
+            c[i][1]=True
+            c[j][1]=True
+            d[i]=j
+        
+for keys in d:
+    print (keys+1),d[keys]+1
+
+            
+        

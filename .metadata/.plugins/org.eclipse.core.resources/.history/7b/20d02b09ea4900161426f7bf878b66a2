@@ -1,0 +1,3 @@
+#a,b=raw_input().split('e')
+#print a*(10**b)
+print "hi"

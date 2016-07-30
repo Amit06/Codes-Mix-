@@ -1,0 +1,41 @@
+'''
+Created on Jul 15, 2016
+
+@author: Amit
+'''
+import heapq
+
+def prim(a,n,m):
+    Nodes={}
+    graph={}
+    for x in range(1,n+1):
+        Nodes[x]=[float('inf'),None]
+        graph[x]=[]
+    for x in a:
+        graph[x]+=[x[1]]
+    Nodes[a[0][0]]=[0,None]
+    print graph
+    '''while(Nodes):
+        Q=sorted(Nodes,key=lambda x:Nodes[x][1])
+        u=Nodes.pop(Q.pop(0))'''
+        
+    
+def main():
+    f=open('Prims.txt','r')
+    a=[]
+    for l in f:
+        a.append(map(int,l.split()))
+    
+    N,M=a[0][0],a[0][1]
+    a=a[1:]
+    print a[0][0]
+    a=[[1,2,3],[1,3,4]]
+    prim(a,3,2)
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()

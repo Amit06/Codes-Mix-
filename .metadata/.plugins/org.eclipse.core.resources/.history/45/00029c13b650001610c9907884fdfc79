@@ -1,0 +1,11 @@
+n=input()
+s=[i for i in raw_input()]
+print s
+p=set(s)
+print p
+d={}
+for a in s:
+    d[a]=[i for i in range(n) if s[i]==a]
+
+for k in d:
+    print k,d[k]

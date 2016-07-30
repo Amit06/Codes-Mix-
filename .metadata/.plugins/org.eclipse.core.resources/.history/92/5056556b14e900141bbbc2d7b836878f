@@ -1,0 +1,38 @@
+import java.util.*;
+public class MaxHeap {
+	int heap[];
+	int n;
+	MaxHeap(int l)
+	{
+		heap=new int[l];
+		n=0;				// root node starts with index 1
+	}
+	void insert(int x)
+	{
+		if(n==heap.length-1)
+		{
+			System.out.println("Heap Full");
+			return;
+		}
+		int pos=++n;
+		while(pos!=1 && x>heap[pos/2])
+		{
+			heap[pos]=heap[pos/2];
+			pos/=2;
+		}
+		heap[pos]=x;
+	}
+	int delete()
+	{
+		if(n==0)
+			throw new NoSuchElementException("Underflow");
+		
+	}
+	void display()
+	{
+		for(int i=1;i<heap.length;i++)
+			System.out.print(heap[i]+" ");
+		System.out.println();
+	}
+
+}

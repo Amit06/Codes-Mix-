@@ -1,0 +1,5 @@
+n=[]
+for i in range(n):
+	for j in range(i,n):
+		if i>j:
+			count+=1

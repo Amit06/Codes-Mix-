@@ -1,0 +1,25 @@
+def adj(x):
+    ans=[]
+    xn=[i for i in x]
+    for p,i in enumerate(xn):
+        if i=='a':
+            ans.append([''.join(xn[:p]+['b']+xn[p+1]),''.join(xn[:p]+['b']+xn[p+1])])
+        elif i=='z':
+            ans.append([''.join(xn[:p]+['a']+xn[p+1]),''.join(xn[:p]+['y']+xn[p+1])])
+        else:
+            ans.append([''.join(xn[:p]+[chr(ord(i)+1)]+xn[p+1]),''.join(xn[:p]+['y']+xn[p+1])])
+
+from _collections import deque
+
+start=raw_input()
+end=raw_input()
+forbid=[i for i in raw_input().split()]
+
+graph={}
+st='bcdefghijklmnopqrstuvwxyz'
+graph['a']=['b','z']
+graph['z']=['a','y']
+for p,i in enumerate(st):
+    graph[i]=[st[p-1],st[p+1]]
+
+    

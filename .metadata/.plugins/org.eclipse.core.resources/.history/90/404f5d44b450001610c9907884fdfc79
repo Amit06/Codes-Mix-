@@ -1,0 +1,6 @@
+n=input()
+s=[i for i in raw_input().split()]
+
+d={}
+for a in s:
+    

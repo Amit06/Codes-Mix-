@@ -1,0 +1,12 @@
+
+public class SparseMatrix {
+	Term a[];
+	SparseMatrix()
+	{
+		a=new Term[1];
+		a[0].row=0;
+		a[0].col=0;
+		a[0].value=0;
+		
+	}
+}

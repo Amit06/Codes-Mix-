@@ -1,0 +1,10 @@
+t,s,x=map(int,raw_input().split())
+flag=True
+if t<=x:
+    for i in range(t,x+1,s):
+        if x==i or x==i+1:
+            print 'YES'
+            flag=False
+            break
+else:
+    print "NO"

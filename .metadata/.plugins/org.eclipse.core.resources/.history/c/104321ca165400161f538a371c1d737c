@@ -1,0 +1,20 @@
+'''
+Created on Jul 27, 2016
+
+@author: Amit
+'''
+
+class BinHeap():
+    
+    def __init__(self,heap,size):
+        self.heap=heap
+        self.size=size
+        
+    def removeMin(self):
+        if self.size==0:
+            "Print Empty heap"
+            return
+        removed=self.heap[0]
+        self.heap[0]=self.heap[self.size-1]
+        
+        

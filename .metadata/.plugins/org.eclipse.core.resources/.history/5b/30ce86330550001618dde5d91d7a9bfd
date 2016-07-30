@@ -1,0 +1,63 @@
+import java.util.*;
+public class main
+{
+	public static void main(String args[])
+	{
+		Scanner in=new Scanner(System.in);
+		int tc=in.nextInt();
+		for (int tcase=0;tcase<tc;tcase++){
+		int f,b,t,fd,bd;
+		f=in.nextInt();
+		b=in.nextInt();
+		t=in.nextInt();
+		fd=in.nextInt();
+		bd=in.nextInt();
+		if (f==b && f<fd)
+			System.out.print("No Ditch");
+		else if (f>=fd)
+	        System.out.print(fd*t+" F");
+	    
+	    else if (f!=b && f<fd)
+	    {
+	    	boolean flag=false;
+	    	char m;
+	    	if (f>b)
+	    		m='F';
+	    	else
+	    	{
+	    		flag=true;
+	    		m='B';
+	    		int temp=fd;
+	    		fd=bd;
+	    		bd=temp;
+	    		temp=f;
+	    		f=b;
+	    		b=temp;
+	    	}
+	    	int ti=0;
+	    	int p=0;
+	    	if (flag)
+	    	{
+	    		ti-=b;
+	    		p+=b*t;
+	    	}
+	    	while (true)
+	    	{
+	    		ti+=f;
+	    		if (ti>=fd)
+	    		{
+	    			p+=(f-(ti-fd))*t;
+	    			break;
+	    		}
+	    		else
+	    			p+=f*t;
+	    		ti-=b;
+	    		p+=b*t;
+	    	
+	    	}
+	    	System.out.print(p+m);
+	    }
+			
+		}	
+	}
+}

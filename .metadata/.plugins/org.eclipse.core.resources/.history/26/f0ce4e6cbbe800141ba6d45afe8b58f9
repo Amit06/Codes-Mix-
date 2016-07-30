@@ -1,0 +1,21 @@
+
+public class EvaluateExpression {
+	private String s;
+	private int n;
+	EvaluateExpression(String x)
+	{
+		s=x;
+		n=0;
+	}
+	private  preceedence getNextToken()
+	{
+		char symbol=s.charAt(n++);
+		switch(symbol)
+		{
+		case '(':return preceedence.lparen;
+		case ')':return preceedence.rparen;
+		}
+		
+	}
+
+}

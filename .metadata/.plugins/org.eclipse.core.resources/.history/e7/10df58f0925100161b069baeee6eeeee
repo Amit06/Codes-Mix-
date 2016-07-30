@@ -1,0 +1,27 @@
+from _collections import deque
+
+def bfs(start):
+    
+    
+    
+class letter:
+choices=[i for i in 'abcdefghijklmnopqrstuvwxyz']
+def __init__(self,val):
+    self.val=val
+def next(self):
+    self.val=self.choices[self.choices.index(self.val)+1] if self.choices.index(self.val)<25 else self.choices[0]
+    
+def prev(self):
+    self.val=self.choices[self.choices.index(self.val)-1] if self.choices.index(self.val)>0 else self.choices[25]
+
+start=raw_input()
+end=raw_input()
+forbid=[i for i in raw_input().split()]
+
+class game:
+    def __init__(self,nodes):
+        self.nodes=[i for i in nodes]
+    def solve(self):
+        bfs(self.nodes)
+
+    

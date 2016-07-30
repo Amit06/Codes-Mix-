@@ -1,0 +1,23 @@
+                String file="D:\\input.txt";
+                Scanner in = new Scanner(new FileReader(file));
+                int[][] entry=new int[5][5];
+                int i=0;
+                
+                while(in.hasNextLine())
+                {
+                    String temp=in.nextLine();
+                    
+                    int d=5-temp.length();
+                    for (int add=0;add<d;add++)
+                        temp=temp+" ";
+                    for (int col=0;col<5;col++)
+                    {    int en; 
+                        if (temp.charAt(col)=='#')
+                            en=1;
+                        else
+                            en=0;
+                        entry[i][col]=en;
+                    }
+                    
+                    
+                }
