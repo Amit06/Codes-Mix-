@@ -1,0 +1,13 @@
+class SubsetSum
+{
+	boolean subSum(int[] a,int n,int S)
+	{
+		if (S>0 && a.length==0)
+			return false;
+		
+		if (S==0)
+			return true;
+		
+		subSum(a)
+	}
+}

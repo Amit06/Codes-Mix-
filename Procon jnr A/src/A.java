@@ -9,9 +9,10 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.util.Arrays;
+//import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.*;
+import java.util.Iterator;
+import java.util.Stack;
 
 class A
 {
@@ -20,28 +21,51 @@ class A
 		InputReader in = new InputReader(System.in);
 		OutputWriter out = new OutputWriter(System.out);
 		int tc=in.readInt();
-		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
-		while(tc>0)
+		
+		for(int test=0;test<tc;test++)
 		{
-			tc-=1;
-			int num=in.readInt();
-			int ctr=0;
+			//System.out.println("#1");
 			
-			int[] a=IOUtils.readIntArray(in, num);
-			boolean[] r=new boolean[num];
-			for(int i=0;i<num;i++)
-				r[i]=(i%2==1);
-			for(int i=0;i<num;i++)
+			int size=in.readInt();
+			//System.out.println(size);
+			int[] a=IOUtils.readIntArray(in, size);
+			Stack<Integer> s=new Stack<Integer>();
+			s.push(a[0]);
+			for(int i=1;i<a.length;i++)
 			{
-				 
+				
+				int next=a[i];
+				//System.out.println(next );
+				if (!s.isEmpty())
+				{
+					int element=s.pop();
+					//System.out.println("--"+element);
+					while(element<next)
+					{
+						out.print(next+" ");
+						if (s.isEmpty())
+							break;
+						element=s.pop();
+					}
+					if (element>next)
+					{
+						s.push(element);
+					}
+				}
+				s.push(next);
+			}
+			while(!s.isEmpty())
+			{
+				s.pop();
+				out.print("-1 ");
 			}
 			
 			
-			
 		}
+		
 		out.flush();
+		
 	}
-	
 }
 
 

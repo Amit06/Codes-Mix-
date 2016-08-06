@@ -1,22 +1,28 @@
-'''
-   author:ph0enix
-'''
-import math
-
-def nCr(n,r):
-    f = math.factorial
-    return f(n) / f(r) / f(n-r) if n-r>=0 else 0
 
 for i in range(input()):
     n=input()
-    a=map(int,raw_input().split())
-    c=[0,0,0]
-    for j in a:
-        c[j%3]+=1
-    ctr=0
-    if c[0]>0 and c[1]>0:
+    c=map(int,raw_input().split())
+    ans=0;
+    cb=[0]*n
+    cr=[0]*n
+    for i in range(n):
+        if cb[i]!=0:
+            continue
         
-        if c[2]>0:
-            ctr+=c[0]*c[1]*c[2]
-    ctr+=nCr(c[0],3)+nCr(c[1],3)+nCr(c[2],3)
-    print ctr
+        cb[i]=i+1
+        k=(i+c[i]+1) % n
+        ctr=0
+        kr=0
+        while(kr<=n):
+            kr+=1
+            if (cb[k]==(i+1)):
+                ans+=(1+ctr-cr[k])
+                break
+            
+            elif (cb[k]!=0):
+                break
+            ctr+=1
+            cr[k]=ctr
+            cb[k]=i+1;
+            k=(k+c[k]+1) % n;
+    print ans

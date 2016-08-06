@@ -1,0 +1,8 @@
+for i in range(input()):
+    n=input()
+    c=map(int,raw_input().split())
+    ans=0;
+    cb=[0]*n;
+    for i in range(n):
+        if cb[i]!=0;
+    

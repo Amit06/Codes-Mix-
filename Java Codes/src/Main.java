@@ -9,41 +9,76 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Arrays;
-
 import java.util.InputMismatchException;
 
-class Main
+class Main 
 {
 	public static void main(String[] args)
 	{
 		InputReader in = new InputReader(System.in);
 		OutputWriter out = new OutputWriter(System.out);
 		
-		int test=in.readInt();
-		for(int tc=0;tc<test;tc++)
-		{
-			int n=in.readInt();
-			int[] ar=IOUtils.readIntArray(in, n);
-			Arrays.sort(ar);
+		int tc = in.readInt();
+		for (int test = 0; test < tc; test++) {
+		
+		int n=in.readInt();
+		int[] c=IOUtils.readIntArray(in, n);
 		int ans=0;
-		for (int i = 0; i < ar.length-2; i++) {
-			for (int j = i+1; j < ar.length-1; j++) {
-				int k=j+1;
-				while(k<n && ar[i]+ar[j]>ar[k]){
-					//System.out.println(i+" "+j+" "+k+" ");
-					k++;
-				}
-				
-				ans+=k-j-1;
+		int[] cb=new int[n];
+		Arrays.fill(cb, 0);
+		
+		for(int i=0;i<n;i++)
+		{	
+			/*for (int cbb : cb) {
+				System.out.print(" "+cbb);
 			}
+			//System.out.println(" "+i);
+			*/if (cb[i] !=0)
+				continue;
+			
+			int[] cr=new int[n];
+			cb[i]=i+1;
+			
+			
+			int k=(c[i]+i+1) % n;
+			
+			
+			int ctr=0;
+			
+			int kr=0;
+			while(kr++<=n)
+			{
+				
+				if (cb[k]==(i+1))
+				{
+					//System.out.println("#1"+ctr);
+					ans+=(1+ctr-cr[k]);
+					break;
+				}
+				else if(cb[k]!=0){
+					//System.out.println("#2");
+					break;
+					
+				}
+				cr[k]=++ctr;
+				//System.out.println("#3");
+				cb[k]=i+1;
+				k=(k+c[k]+1) % n;
+				
+				
+				
+				
+			}
+			
 		}
 		out.printLine(ans);
-		out.flush();
+		
 	}
+		out.flush();
 }
 }
-
 
 class InputReader {
 	

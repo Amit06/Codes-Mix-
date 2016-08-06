@@ -1,0 +1,9 @@
+class SubsetSum
+{
+	boolean subSum(int[] a,int S)
+	{
+		if (S>0 && a.length==0)
+			return false;
+		
+	}
+}

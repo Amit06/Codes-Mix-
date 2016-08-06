@@ -1,0 +1,14 @@
+
+
+class SegTree
+{
+	public static void main(String[] args)
+	{
+		InputReader in = new InputReader(System.in);
+		OutputWriter out = new OutputWriter(System.out);
+		
+		out.flush();
+	}
+}
+
+

@@ -1,0 +1,18 @@
+class SubsetSum
+{
+	public static boolean subSum(int[] a,int S)
+	{
+		boolean[][] soln=new boolean[a.length][S+1];
+		for(int i=1;i<=S;i++)
+			soln[0][i]=false;
+		for(int i=0;i<a.length;i++)
+			soln[i][0]=true;
+		if (S>0 && n==0)
+			return false;
+		
+		if (S==0)
+			return true;
+		
+		return subSum(a,n-1,S) ||subSum(a,n-1,S-a[n-1]);
+	}
+}

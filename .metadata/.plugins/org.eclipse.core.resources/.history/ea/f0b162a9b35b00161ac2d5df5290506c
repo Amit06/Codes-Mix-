@@ -1,0 +1,13 @@
+class SubsetSum
+{
+	boolean subSum(int[] a,int n,int S)
+	{
+		if (S>0 && n==0)
+			return false;
+		
+		if (S==0)
+			return true;
+		
+		return subSum(a,n-1,S) ||subSum(a,n-1,S-a[n-1]);
+	}
+}

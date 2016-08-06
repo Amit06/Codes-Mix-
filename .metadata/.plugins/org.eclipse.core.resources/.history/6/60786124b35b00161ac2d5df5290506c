@@ -1,0 +1,8 @@
+class SubsetSum
+{
+	int subSum(int[] a,int S)
+	{
+		int sum=0;
+		return sum;
+	}
+}
